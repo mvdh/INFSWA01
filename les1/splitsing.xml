@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE zaalvoetbal [
+	<!ENTITY stud SYSTEM "studenten.xml">
+	<!ENTITY eur "&#8364;">
+]>
+<zaalvoetbal>
+	&stud;
+	<wedstrijden>
+		<wedstrijd wedstrijdnummer="1" verenigingnummerthuis="1" verenigingnummeruit="2" teamnummerthuis="1" teamnummeruit="2" sporthalnummer="1">
+			<datum>2011-10-31</datum>
+			<tijdstip>19:00</tijdstip>
+			<uitslag>
+				<scorethuis>10</scorethuis>
+				<scoreuit>2</scoreuit>
+			</uitslag>
+		</wedstrijd>
+		<wedstrijd 	wedstrijdnummer="2" verenigingnummerthuis="2" verenigingnummeruit="1" teamnummerthuis="2" teamnummeruit="1" sporthalnummer="2">
+			<datum>2011-11-07</datum>
+			<tijdstip>21:00</tijdstip>
+			<uitslag>
+				<scorethuis>2</scorethuis>
+				<scoreuit>1</scoreuit>
+			</uitslag>
+		</wedstrijd>	
+	</wedstrijden>
+
+	<verenigingen>
+		<vereniging verenigingnummer="1">
+			<naam>ZVOB</naam>
+			<teams>
+				<team teamnummer="1" />
+				<team teamnummer="2" />
+			</teams>
+		</vereniging>
+		<vereniging verenigingnummer="2">
+			<naam>TOGR</naam>
+			<teams>
+				<team teamnummer="1" />
+				<team teamnummer="2" />
+			</teams>
+		</vereniging>	
+	</verenigingen>
+
+	<sporthallen>
+		<sporthal sporthalnummer="1">
+			<naam>De Boogerd</naam>
+			<telefoonnummer>020-1234567</telefoonnummer>
+			<adres>
+				<postcode>1234AB</postcode>
+				<huisnummer>1</huisnummer>
+				<huisnummertoevoeging></huisnummertoevoeging>
+				<straatnaam>Kalverstraat</straatnaam>
+				<plaats>Amsterdam</plaats>
+			</adres>
+		</sporthal>
+		<sporthal sporthalnummer="2">
+			<naam>De Ridderhal</naam>
+			<telefoonnummer>010-9876543</telefoonnummer>
+			<adres>
+				<postcode>9876ZY</postcode>
+				<huisnummer>99</huisnummer>
+				<huisnummertoevoeging>a</huisnummertoevoeging>
+				<straatnaam>Coolsingel</straatnaam>
+				<plaats>Rotterdam</plaats>
+			</adres>
+		</sporthal>	
+	</sporthallen>
+</zaalvoetbal>

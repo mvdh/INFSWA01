@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<studenten>
+	<student studentnr="0840825">
+		<klas>2V</klas>
+		<studierichting>Informatica</studierichting>
+		<roepnaam>Tom</roepnaam>
+		<voorletters>T.C.</voorletters>
+		<voorvoegsel></voorvoegsel>
+		<achternaam>Nieuwenhuijs</achternaam>
+		<emailadres>0840825@hr.nl</emailadres>
+		<inleverdatum>23-11-2011</inleverdatum>
+		<case>Achtergrond: zaalvoetbalwedstrijden vanuit de bond gezien 
+		(volledige toegang tot database)
+		</case>
+	 </student> 
+	<student studentnr="0837626">
+		<klas>2V</klas>
+		<studierichting>Informatica</studierichting>
+		<roepnaam>Maarten</roepnaam>
+		<voorletters>J.M.</voorletters>
+		<voorvoegsel>van den</voorvoegsel>
+		<achternaam>Hoek</achternaam>
+		<emailadres>0837626@hr.nl</emailadres>
+		<inleverdatum>23-11-2011</inleverdatum>
+		<case>Achtergrond: zaalvoetbalwedstrijden vanuit de bond gezien 
+		(volledige toegang tot database).
+		</case>
+	</student>
+</studenten>
