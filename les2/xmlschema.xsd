@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xmlschema" xmlns:tns="http://www.example.org/xmlschema" elementFormDefault="qualified">
+<xs:schema 
+		xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		elementFormDefault="qualified">
 	<xs:element name="zaalvoetbal">
 		<xs:complexType>
 			<xs:sequence>
@@ -20,18 +22,18 @@
 										<xs:element name="uitslag">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="scorethuis" type="xs:nonNegativeInteger" />
+													<xs:element name="scorethuis" type="xs:nonNegativeInteger"  />
 													<xs:element name="scoreuit" type="xs:nonNegativeInteger" />									
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="wedstrijdnummer" type="xs:nonNegativeInteger" />
-									<xs:attribute name="verenigingnummerthuis" type="xs:nonNegativeInteger" />
-									<xs:attribute name="verenigingnummeruit" type="xs:nonNegativeInteger" />
-									<xs:attribute name="teamnummerthuis" type="xs:nonNegativeInteger" />
-									<xs:attribute name="teamnummeruit" type="xs:nonNegativeInteger" />
-									<xs:attribute name="sporthalnummer" type="xs:nonNegativeInteger" />
+									<xs:attribute name="wedstrijdnummer" type="xs:nonNegativeInteger" use="required" />
+									<xs:attribute name="verenigingnummerthuis" type="xs:nonNegativeInteger" use="required" />
+									<xs:attribute name="verenigingnummeruit" type="xs:nonNegativeInteger" use="required" />
+									<xs:attribute name="teamnummerthuis" type="xs:nonNegativeInteger" use="required" />
+									<xs:attribute name="teamnummeruit" type="xs:nonNegativeInteger" use="required" />
+									<xs:attribute name="sporthalnummer" type="xs:nonNegativeInteger" use="required" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -44,19 +46,19 @@
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="naam" type="xs:string" />
-										<xs:element name="teams" maxOccurs="unbounded">
+										<xs:element name="teams">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="team">
+													<xs:element name="team" maxOccurs="unbounded">
 														<xs:complexType>
-															<xs:attribute name="teamnummer" type="xs:nonNegativeInteger" />
+															<xs:attribute name="teamnummer" type="xs:nonNegativeInteger" use="required" />
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="verenigingnummer" type="xs:nonNegativeInteger" />
+									<xs:attribute name="verenigingnummer" type="xs:nonNegativeInteger" use="required" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -94,7 +96,7 @@
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<xs:attribute name="sporthalnummer" type="xs:nonNegativeInteger" />
+									<xs:attribute name="sporthalnummer" type="xs:nonNegativeInteger" use="required" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
