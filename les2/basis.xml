@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="xmlschema.xsd">
 	<wedstrijden>
-		<wedstrijd 	wedstrijdnummer="1" verenigingnummerthuis="1" verenigingnummeruit="2" teamnummerthuis="1" teamnummeruit="2" sporthalnummer="1">
+		<wedstrijd wedstrijdnummer="1" verenigingnummerthuis="1" verenigingnummeruit="2" teamnummerthuis="1" teamnummeruit="2" sporthalnummer="1">
 			<datum>2011-10-31</datum>
 			<tijdstip>19:00</tijdstip>
 			<uitslag>
@@ -11,7 +11,7 @@
 				<scoreuit>2</scoreuit>
 			</uitslag>
 		</wedstrijd>
-		<wedstrijd 	wedstrijdnummer="2" verenigingnummerthuis="2" verenigingnummeruit="1" teamnummerthuis="2" teamnummeruit="1" sporthalnummer="2">
+		<wedstrijd wedstrijdnummer="2" verenigingnummerthuis="2" verenigingnummeruit="1" teamnummerthuis="2" teamnummeruit="1" sporthalnummer="2">
 			<datum>2011-11-07</datum>
 			<tijdstip>21:00</tijdstip>
 			<uitslag>
