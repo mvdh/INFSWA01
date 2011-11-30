@@ -45,7 +45,13 @@
 							<xs:element name="vereniging"  maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="naam" type="xs:string" />
+										<xs:element name="naam">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 										<xs:element name="teams">
 											<xs:complexType>
 												<xs:sequence>
@@ -71,7 +77,13 @@
 							<xs:element name="sporthal" maxOccurs="unbounded">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="naam" type="xs:string" />
+										<xs:element name="naam">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
 										<xs:element name="telefoonnummer">
 											<xs:simpleType>
 												<xs:restriction base="xs:nonNegativeInteger">
@@ -90,9 +102,21 @@
 														</xs:simpleType>
 													</xs:element>
 													<xs:element name="huisnummer" type="xs:positiveInteger" />
-													<xs:element name="huisnummertoevoeging" type="xs:string" />
-													<xs:element name="straatnaam" type="xs:string" />
-													<xs:element name="plaats" type="xs:string" />	
+													<xs:element name="huisnummertoevoeging" type="xs:string" minOccurs="0" />
+													<xs:element name="straatnaam">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="plaats">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>	
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>

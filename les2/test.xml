@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<zaalvoetbal 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="xmlschema.xsd">
+	<wedstrijden>
+		<!-- 
+			TEST 0 - vereningingsnummerthuis bestaat niet  
+		-->
+		<wedstrijd 	wedstrijdnummer="1" verenigingnummerthuis="3" verenigingnummeruit="2" teamnummerthuis="1" teamnummeruit="2" sporthalnummer="1">
+			
+			<!-- 
+				TEST 1 - Datum functie 
+			-->
+			<datum>2011-12-33</datum>
+			<!-- 
+				TEST 2 - reguliere expressie 
+			-->
+			<tijdstip>09:80</tijdstip>
+			<uitslag>
+				<!-- 
+					TEST 3 - niet gebruiken van nonNegativeInteger  
+				-->
+				<scorethuis>-1</scorethuis>
+				<scoreuit>1</scoreuit>
+			</uitslag>
+		</wedstrijd>
+		<wedstrijd 	wedstrijdnummer="2" verenigingnummerthuis="2" verenigingnummeruit="1" teamnummerthuis="2" teamnummeruit="1" sporthalnummer="2">
+			<datum>2011-16-07</datum>
+			<tijdstip>21:00</tijdstip>
+			<uitslag>
+				<!-- 
+					TEST 4 - weglaten element <scorethuis> 
+				-->
+				<scoreuit>1</scoreuit>
+			</uitslag>
+		</wedstrijd>	
+	</wedstrijden>
+
+	<verenigingen>
+		<vereniging verenigingnummer="1">
+			<naam>ZVOB</naam>
+			<teams>
+				<team teamnummer="1" verenigingnummer="1" />
+				<team teamnummer="2" verenigingnummer="1" />
+			</teams>
+		</vereniging>
+		<vereniging verenigingnummer="2">
+			<naam>TOGR</naam>
+			<teams>
+				<team teamnummer="1" verenigingnummer="2" />
+				<team teamnummer="2" verenigingnummer="2" />
+			</teams>
+		</vereniging>	
+	</verenigingen>
+
+	<sporthallen>
+		<sporthal sporthalnummer="1">
+			<naam>De Boogerd</naam>
+			<!-- 
+				TEST - telefoonnummer regex
+			 -->
+			<telefoonnummer>a201234567</telefoonnummer>
+			<adres>
+				<postcode>1234AB</postcode>
+				<huisnummer>1</huisnummer>
+				<huisnummertoevoeging></huisnummertoevoeging>
+				<straatnaam>Kalverstraat</straatnaam>
+				<plaats>Amsterdam</plaats>
+			</adres>
+		</sporthal>
+		<sporthal sporthalnummer="2">
+			<naam>De Ridderhal</naam>
+			<telefoonnummer>0109876543</telefoonnummer>
+			<adres>
+				<!-- 
+					TEST - Postcode regex
+				 -->
+				<postcode>ZY9876</postcode>
+				<huisnummer>99</huisnummer>
+				<!-- 
+					TEST - Weglaten huisnummertoevoeging 
+				-->
+				<straatnaam>Coolsingel</straatnaam>
+				<plaats>Rotterdam</plaats>
+			</adres>
+		</sporthal>	
+	</sporthallen>
+</zaalvoetbal>
