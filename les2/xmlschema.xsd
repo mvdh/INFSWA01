@@ -22,7 +22,7 @@
 										<xs:element name="uitslag">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="scorethuis" type="xs:nonNegativeInteger"  />
+													<xs:element name="scorethuis" type="xs:nonNegativeInteger" />
 													<xs:element name="scoreuit" type="xs:nonNegativeInteger" />									
 												</xs:sequence>
 											</xs:complexType>
@@ -52,6 +52,7 @@
 													<xs:element name="team" maxOccurs="unbounded">
 														<xs:complexType>
 															<xs:attribute name="teamnummer" type="xs:nonNegativeInteger" use="required" />
+															<xs:attribute name="verenigingnummer" type="xs:nonNegativeInteger" use="required" />
 														</xs:complexType>
 													</xs:element>
 												</xs:sequence>
@@ -111,6 +112,7 @@
 		<xs:key name="keyteamnummer">
 			<xs:selector xpath="./verenigingen/vereniging/teams/team" />
 			<xs:field xpath="@teamnummer"/>
+			<xs:field xpath="@verenigingnummer"/>			
 		</xs:key>
 		<xs:key name="keysporthalnummer">
 			<xs:selector xpath="./sporthallen/sporthal"/>
@@ -127,10 +129,12 @@
 		<xs:keyref name="refteamnummerthuis" refer="keyteamnummer">
 			<xs:selector xpath="./wedstrijden/wedstrijd"/>
 			<xs:field xpath="@teamnummerthuis"/>
+			<xs:field xpath="@verenigingnummerthuis"/>
 		</xs:keyref> 		
 		<xs:keyref name="refteamnummeruit" refer="keyteamnummer">
 			<xs:selector xpath="./wedstrijden/wedstrijd"/>
 			<xs:field xpath="@teamnummeruit"/>
+			<xs:field xpath="@verenigingnummeruit"/>
 		</xs:keyref> 		
 		<xs:keyref name="refsporthalnummer" refer="keysporthalnummer">
 			<xs:selector xpath="./wedstrijden/wedstrijd"/>

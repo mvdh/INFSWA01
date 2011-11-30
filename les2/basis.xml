@@ -25,15 +25,15 @@
 		<vereniging verenigingnummer="1">
 			<naam>ZVOB</naam>
 			<teams>
-				<team teamnummer="1" />
-				<team teamnummer="2" />
+				<team teamnummer="1" verenigingnummer="1" />
+				<team teamnummer="2" verenigingnummer="1" />
 			</teams>
 		</vereniging>
 		<vereniging verenigingnummer="2">
 			<naam>TOGR</naam>
 			<teams>
-				<team teamnummer="1" />
-				<team teamnummer="2" />
+				<team teamnummer="1" verenigingnummer="2" />
+				<team teamnummer="2" verenigingnummer="2" />
 			</teams>
 		</vereniging>	
 	</verenigingen>
