@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<kaartjes>
+	<kaartje>
+		<school>Hogeschool Rotterdam</school>
+		<opleiding>Informatica</opleiding>
+		<naam>Maarten van den Hoek</naam>
+		<foto url="maarten.jpg" />
+	</kaartje>
+	<kaartje>
+		<school>Hogeschool Rotterdam</school>
+		<opleiding>Informatica</opleiding>
+		<naam>Tom Nieuwenhuijs</naam>
+		<foto url="tom.jpg" />
+	</kaartje>
+</kaartjes>
+
+
