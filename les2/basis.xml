@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="xmlschema.xsd">
 	<wedstrijden>
-		<wedstrijd wedstrijdnummer="1" verenigingnummerthuis="1" verenigingnummeruit="2" teamnummerthuis="1" teamnummeruit="2" sporthalnummer="1">
+		<wedstrijd 	wedstrijdnummer="1" verenigingnummerthuis="1" verenigingnummeruit="2" teamnummerthuis="1" teamnummeruit="2" sporthalnummer="1">
 			<datum>2011-10-31</datum>
 			<tijdstip>19:00</tijdstip>
 			<uitslag>
@@ -11,21 +11,21 @@
 				<scoreuit>2</scoreuit>
 			</uitslag>
 		</wedstrijd>
-		<wedstrijd wedstrijdnummer="2" verenigingnummerthuis="2" verenigingnummeruit="1" teamnummerthuis="2" teamnummeruit="1" sporthalnummer="2">
-			<datum>2011-11-07</datum>
-			<tijdstip>21:00</tijdstip>
-			<uitslag>
-				<scorethuis>2</scorethuis>
-				<scoreuit>1</scoreuit>
+		<wedstrijd 	wedstrijdnummer="2" verenigingnummerthuis="2" verenigingnummeruit="1" teamnummerthuis="2" teamnummeruit="1" sporthalnummer="2"><!--//////// Type 2 ////////-->
+			<datum>2011-11-07</datum><!--//////// Type 3 ////////-->
+			<tijdstip>21:00</tijdstip><!--//////// Type 3 ////////-->
+			<uitslag><!--//////// Type 2 ////////-->
+				<scorethuis>2</scorethuis> <!--//////// Type 3 ////////-->
+				<scoreuit>1</scoreuit><!--//////// Type 3 ////////-->
 			</uitslag>
 		</wedstrijd>	
 	</wedstrijden>
 
-	<verenigingen>
-		<vereniging verenigingnummer="1">
-			<naam>ZVOB</naam>
-			<teams>
-				<team teamnummer="1" verenigingnummer="1" />
+	<verenigingen><!--//////// Type 2 ////////-->
+		<vereniging verenigingnummer="1"><!--//////// Type 2 ////////-->
+			<naam>ZVOB</naam><!--//////// Type 3 ////////-->
+			<teams><!--//////// Type 2 ////////-->
+				<team teamnummer="1" verenigingnummer="1" /> <!--//////// Type 1 ////////-->
 				<team teamnummer="2" verenigingnummer="1" />
 			</teams>
 		</vereniging>
