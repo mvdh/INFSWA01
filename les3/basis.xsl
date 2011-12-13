@@ -25,9 +25,7 @@
 						<th>Gespeelde wedstrijden</th>
 						<th>Doelpunten mee</th>
 					</tr>
-					<xsl:apply-templates select="verenigingen/vereniging/teams/team" mode="tussenstand">
-						
-					</xsl:apply-templates>
+					<xsl:apply-templates select="verenigingen/vereniging/teams/team" mode="tussenstand" />
 				</table>
 			</body>
 		</html>
@@ -59,13 +57,12 @@
 		<xsl:variable name="tnr"><xsl:value-of select="@teamnummer" /></xsl:variable>
 		<xsl:variable name="thuis"><xsl:value-of select="sum(/zaalvoetbal/wedstrijden/wedstrijd[$vnr=@verenigingnummerthuis and $tnr=@teamnummerthuis]/uitslag/scorethuis)" /></xsl:variable>
 		<xsl:variable name="uit"><xsl:value-of select="sum(/zaalvoetbal/wedstrijden/wedstrijd[$vnr=@verenigingnummeruit and $tnr=@teamnummeruit]/uitslag/scoreuit)" /></xsl:variable>
-		<xsl:variable name="totaal"><xsl:value-of select="$thuis + $uit" /></xsl:variable>
 		<tr>
 			<xsl:apply-templates select="/zaalvoetbal/verenigingen/vereniging[$vnr=@verenigingnummer]">
 	        	<xsl:with-param name="tnr" select="$tnr" />
 	        </xsl:apply-templates>
 			<td><xsl:value-of select="count(/zaalvoetbal/wedstrijden/wedstrijd[($vnr=@verenigingnummerthuis and $tnr=@teamnummerthuis) or ($vnr=@verenigingnummeruit and $tnr=@teamnummeruit)])" /></td>
-			<td><xsl:value-of select="$totaal" /></td>
+			<td><xsl:value-of select="$thuis + $uit" /></td>
 		</tr>
 	</xsl:template>
 </xsl:stylesheet>
