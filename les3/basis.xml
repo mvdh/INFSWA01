@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<zaalvoetbal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xmlschema.xsd">
+<zaalvoetbal>
 	<wedstrijden>
 		<wedstrijd 	wedstrijdnummer="1" verenigingnummerthuis="1" verenigingnummeruit="2" teamnummerthuis="1" teamnummeruit="2" sporthalnummer="1">
 			<datum>2011-10-31</datum>
@@ -18,7 +18,6 @@
 			</uitslag>
 		</wedstrijd>	
 	</wedstrijden>
-
 	<verenigingen>
 		<vereniging verenigingnummer="1">
 			<naam>ZVOB</naam>
@@ -35,7 +34,6 @@
 			</teams>
 		</vereniging>	
 	</verenigingen>
-
 	<sporthallen>
 		<sporthal sporthalnummer="1">
 			<naam>De Boogerd</naam>
