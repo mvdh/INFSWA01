@@ -17,6 +17,14 @@
 				<scoreuit>1</scoreuit>
 			</uitslag>
 		</wedstrijd>	
+		<wedstrijd 	wedstrijdnummer="3" verenigingnummerthuis="1" verenigingnummeruit="2" teamnummerthuis="2" teamnummeruit="1" sporthalnummer="2">
+			<datum>2011-11-14</datum>
+			<tijdstip>21:00</tijdstip>
+			<uitslag>
+				<scorethuis>4</scorethuis>
+				<scoreuit>3</scoreuit>
+			</uitslag>
+		</wedstrijd>
 	</wedstrijden>
 	<verenigingen>
 		<vereniging verenigingnummer="1">
