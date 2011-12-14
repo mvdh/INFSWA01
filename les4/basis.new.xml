@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<zaalvoetbal>
-	<wedstrijden>
-		<wedstrijd 	wedstrijdnummer="1" verenigingnummerthuis="1" verenigingnummeruit="2" teamnummerthuis="1" teamnummeruit="2" sporthalnummer="1">
+<?xml version="1.0" encoding="UTF-8"?><zvoetbal><wedstrijden>
+		<wedstrijd sporthalnummer="1" teamnummerthuis="1" teamnummeruit="2" verenigingnummerthuis="1" verenigingnummeruit="2" wedstrijdnummer="1">
 			<datum>2011-10-31</datum>
 			<tijdstip>19:00</tijdstip>
 			<uitslag>
@@ -9,41 +7,45 @@
 				<scoreuit>2</scoreuit>
 			</uitslag>
 		</wedstrijd>
-		<wedstrijd 	wedstrijdnummer="2" verenigingnummerthuis="2" verenigingnummeruit="1" teamnummerthuis="2" teamnummeruit="1" sporthalnummer="2">
+		<wedstrijd sporthalnummer="2" teamnummerthuis="2" teamnummeruit="1" verenigingnummerthuis="2" verenigingnummeruit="1" wedstrijdnummer="2">
 			<datum>2011-11-07</datum>
 			<tijdstip>21:00</tijdstip>
 			<uitslag>
 				<scorethuis>2</scorethuis>
 				<scoreuit>1</scoreuit>
 			</uitslag>
-		</wedstrijd>	
-	</wedstrijden>
-
-	<verenigingen>
+		</wedstrijd>
+		<wedstrijd sporthalnummer="2" teamnummerthuis="2" teamnummeruit="1" verenigingnummerthuis="1" verenigingnummeruit="2" wedstrijdnummer="3">
+			<datum>2011-11-14</datum>
+			<tijdstip>21:00</tijdstip>
+			<uitslag>
+				<scorethuis>4</scorethuis>
+				<scoreuit>3</scoreuit>
+			</uitslag>
+		</wedstrijd>
+	</wedstrijden><verenigingen>
 		<vereniging verenigingnummer="1">
 			<naam>ZVOB</naam>
 			<teams>
-				<team teamnummer="1" verenigingnummer="1" />
-				<team teamnummer="2" verenigingnummer="1" />
+				<team teamnummer="1" verenigingnummer="1"/>
+				<team teamnummer="2" verenigingnummer="1"/>
 			</teams>
 		</vereniging>
 		<vereniging verenigingnummer="2">
 			<naam>TOGR</naam>
 			<teams>
-				<team teamnummer="1" verenigingnummer="2" />
-				<team teamnummer="2" verenigingnummer="2" />
+				<team teamnummer="1" verenigingnummer="2"/>
+				<team teamnummer="2" verenigingnummer="2"/>
 			</teams>
 		</vereniging>	
-	</verenigingen>
-
-	<sporthallen>
+	</verenigingen><sporthallen>
 		<sporthal sporthalnummer="1">
 			<naam>De Boogerd</naam>
 			<telefoonnummer>0201234567</telefoonnummer>
 			<adres>
 				<postcode>1234AB</postcode>
 				<huisnummer>1</huisnummer>
-				<huisnummertoevoeging></huisnummertoevoeging>
+				<huisnummertoevoeging/>
 				<straatnaam>Kalverstraat</straatnaam>
 				<plaats>Amsterdam</plaats>
 			</adres>
@@ -59,5 +61,4 @@
 				<plaats>Rotterdam</plaats>
 			</adres>
 		</sporthal>	
-	</sporthallen>
-</zaalvoetbal>
+	</sporthallen><formulier-id id="1234"/></zvoetbal>
