@@ -68,4 +68,27 @@ public class Wedstrijd
 		this.scoreUit = scoreUit;
 	}
 
+	@Override
+	public String toString() {
+		String s = "";
+		
+		s += "WEDSTRIJD INFORMATIE:" + "\n";
+		s += "Wedstrijdnummer: " + getWedstrijdnummer() + "\n";
+		s += "Datum: " + getDatumTijd() + "\n";
+		s += "Score thuis:" + getScoreThuis() + "\n";
+		s += "Score uit: " + getScoreUit() + "\n\n";
+		
+		s += "VERENIGING/TEAM THUIS:" + "\n";
+		s += "Team " + getThuisTeam().getTeamnummer() + "\n";
+		s += getThuisTeam().getVereniging().toString() + "\n\n";
+		
+		s += "VERENIGING/TEAM UIT:" + "\n";
+		s += "Team " + getUitTeam().getTeamnummer() + "\n";
+		s += getUitTeam().getVereniging().toString() + "\n\n";
+		
+		s += "SPORTHAL" + "\n";
+		s += sporthal.toString() + "\n";
+		
+		return s;
+	}
 }

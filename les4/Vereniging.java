@@ -39,4 +39,13 @@ public class Vereniging
 	public Vereniging() {
 		this.teams = new ArrayList<Team>();
 	}
+	
+	@Override
+	public String toString(){
+		
+		String s = "verenigingnummer = " + getVerenigingnummer() + "\n" +
+				"vereniging = " + getName() + "\n";
+		return s;
+		
+	}
 }

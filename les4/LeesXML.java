@@ -42,9 +42,10 @@ public class LeesXML
 		
 		//
 		leesZaalvoetbal();
+		System.out.println(allData());
 	}
 	
-	public ArrayList leesZaalvoetbal() {
+	public void leesZaalvoetbal() {
 		NodeList sporthallenL = document.getElementsByTagName("sporthal");
 		for(int i = 0; i < sporthallenL.getLength(); i++) 
 		{
@@ -66,8 +67,6 @@ public class LeesXML
 		{
 			this.wedstrijden.add(leesWedstrijd(wedstrijdenL.item(i)));
 		}
-		
-		return null;
 	}
 	
 	public Sporthal leesSporthal(Node nSporthal) {
@@ -132,7 +131,7 @@ public class LeesXML
 			
 			n = n.getNextSibling();
 		}
-		return new Sporthal();
+		return sporthal;
 	}
 
 	public Vereniging leesVereniging(Node nVereniging) {
@@ -191,7 +190,7 @@ public class LeesXML
 
 		int verenigingnummeruit = Integer.parseInt(eW.getAttribute("verenigingnummerthuis"));
 		int teamnummeruit = Integer.parseInt(eW.getAttribute("teamnummerthuis"));
-		wedstrijd.setThuisTeam(zoekTeam(teamnummeruit, verenigingnummeruit));
+		wedstrijd.setUitTeam(zoekTeam(teamnummeruit, verenigingnummeruit));
 		
 		int sporthalnummer = Integer.parseInt(eW.getAttribute("sporthalnummer"));
 		wedstrijd.setSporthal(zoekSporthal(sporthalnummer));
@@ -281,5 +280,19 @@ public class LeesXML
 			}
 		}
 		return null;	
+	}
+	
+	public String allData() {
+		String s = "";
+		
+		for(int i = 0; i < this.wedstrijden.size(); i++) {
+			Wedstrijd w = this.wedstrijden.get(i);
+			s += w.toString();
+			
+			s += "///////////////////////////////////////////////////////" + "\n\n\n";
+		}
+		
+		
+		return s;
 	}
 }
