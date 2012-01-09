@@ -19,10 +19,10 @@ public class LeesXML
 	private DocumentBuilder domBuilder;
 	private Document document;
 	
-	private ArrayList<Sporthal> sporthallen; //TODO
-	private ArrayList<Team> teams; //TODO
-	private ArrayList<Vereniging> verenigingen; //TODO
-	private ArrayList<Wedstrijd> wedstrijden; //TODO
+	private ArrayList<Sporthal> sporthallen;
+	private ArrayList<Team> teams;
+	private ArrayList<Vereniging> verenigingen;
+	private ArrayList<Wedstrijd> wedstrijden;
 	
 
 	public LeesXML(String src) {
@@ -34,12 +34,39 @@ public class LeesXML
 			return;
 		}
 		
-		NodeList nL = document.getElementsByTagName("wedstrijd");
-		leesWedstrijd(nL.item(0));
+		//
+		sporthallen = new ArrayList<Sporthal>();
+		teams = new ArrayList<Team>();
+		verenigingen = new ArrayList<Vereniging>();
+		wedstrijden = new ArrayList<Wedstrijd>();
+		
+		//
+		leesZaalvoetbal();
 	}
 	
 	public ArrayList leesZaalvoetbal() {
-		Element root = document.getDocumentElement();
+		NodeList sporthallenL = document.getElementsByTagName("sporthal");
+		for(int i = 0; i < sporthallenL.getLength(); i++) 
+		{
+			this.sporthallen.add(leesSporthal(sporthallenL.item(i)));
+		}
+
+		
+		NodeList verenigingenL = document.getElementsByTagName("vereniging");
+		for(int i = 0; i < sporthallenL.getLength(); i++) 
+		{
+			Vereniging v = leesVereniging(verenigingenL.item(i));
+			this.verenigingen.add(v);
+			this.teams.addAll(v.getTeams());
+		}
+
+		
+		NodeList wedstrijdenL = document.getElementsByTagName("wedstrijd");
+		for(int i = 0; i < wedstrijdenL.getLength(); i++) 
+		{
+			this.wedstrijden.add(leesWedstrijd(wedstrijdenL.item(i)));
+		}
+		
 		return null;
 	}
 	
@@ -105,7 +132,6 @@ public class LeesXML
 			
 			n = n.getNextSibling();
 		}
-		System.out.println(sporthal.toString());
 		return new Sporthal();
 	}
 
@@ -130,16 +156,16 @@ public class LeesXML
 					Node nTeam = n.getFirstChild();
 					while (nTeam != null)
 					{
-						Team team = new Team();
-						team.setVereniging(vereniging);
 						if(nTeam instanceof Element) 
 						{
-							Element t = (Element) nTeam;
-							team.setTeamnummer(Integer.parseInt(t.getAttribute("teamnummer")));
+							if(nTeam.getNodeName().compareTo("team") == 0) {
+								Team team = new Team();
+								team.setVereniging(vereniging);
+								Element t = (Element) nTeam;
+								team.setTeamnummer(Integer.parseInt(t.getAttribute("teamnummer")));
+								vereniging.addTeam(team);
+							}
 						}
-						vereniging.addTeam(team);
-						teams.add(team);
-						
 						nTeam = nTeam.getNextSibling();
 					}
 				}
@@ -152,12 +178,23 @@ public class LeesXML
 	public Wedstrijd leesWedstrijd(Node nWedstrijdn) {
 		Wedstrijd wedstrijd = new Wedstrijd();
 		Node n = nWedstrijdn.getFirstChild();
+		Element eW = (Element) nWedstrijdn; 
 		boolean datumToegevoegd = false;
 		boolean tijdToegevoegd = false;
 		
 		Calendar cal = Calendar.getInstance();
-		wedstrijd.setWedstrijdnummer(Integer.parseInt(((Element) nWedstrijdn).getAttribute("wedstrijdnummer")));
+		wedstrijd.setWedstrijdnummer(Integer.parseInt(eW.getAttribute("wedstrijdnummer")));
 		
+		int verenigingnummerthuis = Integer.parseInt(eW.getAttribute("verenigingnummerthuis"));
+		int teamnummerthuis = Integer.parseInt(eW.getAttribute("teamnummerthuis"));
+		wedstrijd.setThuisTeam(zoekTeam(teamnummerthuis, verenigingnummerthuis));
+
+		int verenigingnummeruit = Integer.parseInt(eW.getAttribute("verenigingnummerthuis"));
+		int teamnummeruit = Integer.parseInt(eW.getAttribute("teamnummerthuis"));
+		wedstrijd.setThuisTeam(zoekTeam(teamnummeruit, verenigingnummeruit));
+		
+		int sporthalnummer = Integer.parseInt(eW.getAttribute("sporthalnummer"));
+		wedstrijd.setSporthal(zoekSporthal(sporthalnummer));
 		
 		while(n != null) 
 		{
@@ -213,5 +250,36 @@ public class LeesXML
 		}
 		
 		return wedstrijd;
+	}
+	
+	public Sporthal zoekSporthal(int sporthalnummer) {
+		for(int i = 0; i < this.sporthallen.size(); i++) {
+			if(sporthallen.get(i).getSporthalnummer() == sporthalnummer) {
+				return sporthallen.get(i);
+			}
+		}
+		return null;
+	}
+	
+	public Vereniging zoekVereniging(int verenigingnummer) {
+		for(int i = 0; i < this.verenigingen.size(); i++) {
+			if(verenigingen.get(i).getVerenigingnummer() == verenigingnummer) {
+				return verenigingen.get(i);
+			}
+		}
+		return null;		
+	}
+	
+	public Team zoekTeam (int teamnummer, int verenigingnummer) {
+		Vereniging v = zoekVereniging(verenigingnummer);
+		if(v != null) {
+			ArrayList<Team> teams = v.getTeams();
+			for(int i = 0; i < teams.size(); i++) {
+				if(teams.get(i).getTeamnummer() == teamnummer) {
+					return teams.get(i);
+				}
+			}
+		}
+		return null;	
 	}
 }
