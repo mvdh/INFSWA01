@@ -6,6 +6,15 @@ public class Vereniging
 {
 	private ArrayList<Team> teams;
 	private String name;
+	private int verenigingnummer;
+
+	public int getVerenigingnummer() {
+		return verenigingnummer;
+	}
+
+	public void setVerenigingnummer(int verenigingnummer) {
+		this.verenigingnummer = verenigingnummer;
+	}
 
 	public ArrayList<Team> getTeams() {
 		return teams;

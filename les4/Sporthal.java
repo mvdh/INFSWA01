@@ -75,4 +75,16 @@ public class Sporthal
 		this.plaats = plaats;
 	}
 
+	@Override
+	public String toString() {
+		String s = "sporthalnummer = " + this.getSporthalnummer() + "\n" +
+				"naam = " + this.getNaam() + "\n" +
+				"telefoonnummer = " + this.getTelefoonnummer() + "\n" +
+				"postcode = " + this.getPostcode() + "\n" +
+				"huisnummer = " + this.getHuisnummer() + "\n" +
+				"huisnummertoevoeging = " + this.getHuisnummertoevoeging() + "\n" +
+				"straatnaam = " + this.getStraatnaam() + "\n" +
+				"plaats = " + this.getPlaats() + "\n";
+		return s;
+	}
 }

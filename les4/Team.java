@@ -20,5 +20,8 @@ public class Team
 	public void setTeamnummer(int teamnummer) {
 		this.teamnummer = teamnummer;
 	}
-
+	@Override
+	public String toString() {
+		return "teamnummer = " + this.getTeamnummer();
+	}
 }
