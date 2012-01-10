@@ -31,7 +31,7 @@ public class LeesXML
 			domBuilder = domFactory.newDocumentBuilder();
 			document = domBuilder.parse(new File(src));
 		} catch (Exception e) {
-			return;
+			e.printStackTrace();
 		}
 		
 		//
@@ -45,6 +45,32 @@ public class LeesXML
 		System.out.println(allData());
 	}
 	
+	/**
+	 * 
+	 */
+	public ArrayList<Sporthal> getSporthallen()
+	{
+		return sporthallen;
+	}
+	
+	public ArrayList<Team> getTeams()
+	{
+		return teams;
+	}
+	
+	public ArrayList<Vereniging> getVerenigingen()
+	{
+		return verenigingen;
+	}
+	
+	public ArrayList<Wedstrijd> getWedstrijden()
+	{
+		return wedstrijden;
+	}
+	/**
+	 * 
+	 */
+			
 	public void leesZaalvoetbal() {
 		NodeList sporthallenL = document.getElementsByTagName("sporthal");
 		for(int i = 0; i < sporthallenL.getLength(); i++) 

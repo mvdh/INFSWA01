@@ -35,7 +35,6 @@ public class XMLTest
 	{
 		try 
 		{
-			// Load xml file
 	        DocumentBuilder parser = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 	        Document document = parser.parse(new File("src/les4/basis.xml"));
 	        DOMSource source = new DOMSource(document);
